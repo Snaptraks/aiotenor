@@ -1,8 +1,6 @@
 from .http import HTTPClient
 from .response import Gif, Category
 
-from pprint import pprint
-
 
 class Tenor:
     def __init__(

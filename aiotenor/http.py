@@ -2,8 +2,6 @@ import aiohttp
 import asyncio
 import json
 
-from pprint import pprint
-
 from . import errors
 
 
