@@ -98,7 +98,6 @@ class TenorTest(unittest.IsolatedAsyncioTestCase):
             limit=1,
             media_filter=aiotenor.MediaFilter.MINIMAL,
         )
-        # print(results)
 
         status = await self.client.registershare(
             id=results[0].id,

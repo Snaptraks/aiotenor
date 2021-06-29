@@ -27,7 +27,6 @@ class Route:
 class HTTPClient:
     def __init__(self, api_key):
         self.api_key = api_key
-        # self.session = aiohttp.ClientSession()
         self.session = None
 
     async def request(self, route, parameters=None):
@@ -46,8 +45,6 @@ class HTTPClient:
         for tries in range(5):
             async with self.session.get(route.url, params=params) as resp:
                 data = await json_or_text(resp)
-
-                # print(resp.status)
 
                 if "error" in data and resp.status == 200:
                     raise errors.TenorException(data["error"])
